@@ -7,16 +7,20 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Pixelate Your Image</h1>
-  
-  <input type="file" id="upload" accept="image/*">
-  <br><br>
-  <label>Pixel Size: <span id="pixelSizeValue">10</span></label>
-  <input type="range" id="pixelSize" min="1" max="50" value="10">
-  <br><br>
-  <canvas id="canvas"></canvas>
-  <br><br>
-  <button id="download">Download Pixelated Image</button>
+  <div class="container">
+    <h1>Pixelate Your Image</h1>
+
+    <input type="file" id="upload" accept="image/*">
+    
+    <div class="slider-container">
+      <label>Pixel Size: <span id="pixelSizeValue">10</span></label>
+      <input type="range" id="pixelSize" min="1" max="50" value="10">
+    </div>
+
+    <canvas id="canvas"></canvas>
+
+    <button id="download">Download Pixelated Image</button>
+  </div>
 
   <script src="script.js"></script>
 </body>
