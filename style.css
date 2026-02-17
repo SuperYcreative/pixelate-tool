@@ -9,37 +9,113 @@ body {
 
 .container {
   text-align: center;
-  max-width: 1200px;
   width: 100%;
+  max-width: 1200px;
 }
 
-canvas {
-  border: 1px solid #333;
+/* Instructions overlay */
+#instructions {
+  background: #fffae6;
+  border: 1px solid #f0e68c;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #333;
+  transition: opacity 0.3s ease, max-height 0.3s ease;
+  max-height: 200px;
+  overflow: hidden;
+}
+
+#instructions.hidden {
+  opacity: 0;
+  max-height: 0;
+  padding: 0;
+  margin-bottom: 0;
+}
+
+/* Drag-and-drop box */
+#drop-area {
+  border: 2px dashed #666;
+  padding: 40px;
   margin-top: 20px;
-
-  /* Comfortable size */
-  width: 80vw;        /* 80% of viewport width */
-  max-width: 1000px;  /* caps at 1000px */
-  height: auto;       /* keep aspect ratio */
-  max-height: 70vh;   /* don’t exceed 70% of viewport height */
-
-  image-rendering: pixelated; /* keeps pixels sharp */
+  cursor: pointer;
+  background: #fff;
+  transition: background 0.3s, border-color 0.3s, transform 0.2s;
 }
 
+#drop-area.hover {
+  background: #e0e0e0;
+  border-color: #333;
+  transform: scale(1.02);
+}
 
+#drop-area input[type="file"] {
+  display: none;
+}
 
+/* Slider */
 input[type="range"] {
   width: 80%;
   margin-top: 10px;
+  -webkit-appearance: none;
+  height: 8px;
+  border-radius: 5px;
+  background: linear-gradient(to right, #4caf50 0%, #4caf50 50%, #ddd 50%, #ddd 100%);
+  outline: none;
+  transition: background 0.3s;
 }
 
-button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  font-size: 16px;
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #4caf50;
+  cursor: pointer;
+  border: 2px solid #333;
+  transition: background 0.3s, transform 0.2s;
+}
+
+input[type="range"]:active::-webkit-slider-thumb {
+  transform: scale(1.2);
+  background: #45a049;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #4caf50;
+  border: 2px solid #333;
   cursor: pointer;
 }
 
-.slider-container {
+/* Canvas */
+canvas {
+  border: 1px solid #333;
   margin-top: 20px;
+  width: 80%;
+  max-width: 1000px;
+  height: auto;
+  max-height: 70vh;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  image-rendering: pixelated;
+}
+
+/* Buttons */
+.button-container {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.button-container button,
+#download {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
 }
