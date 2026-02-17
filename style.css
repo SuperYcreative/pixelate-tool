@@ -17,14 +17,15 @@ canvas {
   border: 1px solid #333;
   margin-top: 20px;
 
-  /* Big but fits on most screens without scrolling */
-  width: 90vw;        /* 90% of viewport width */
-  max-width: 1200px;  /* optional max width */
-  max-height: 80vh;   /* max height is 80% of viewport height */
-  height: auto;       /* maintain aspect ratio */
+  /* Comfortable size */
+  width: 80vw;        /* 80% of viewport width */
+  max-width: 1000px;  /* caps at 1000px */
+  height: auto;       /* keep aspect ratio */
+  max-height: 70vh;   /* don’t exceed 70% of viewport height */
 
-  image-rendering: pixelated; /* keeps pixels crisp when enlarged */
+  image-rendering: pixelated; /* keeps pixels sharp */
 }
+
 
 
 input[type="range"] {
