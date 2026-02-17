@@ -1,12 +1,38 @@
 body {
   font-family: Arial, sans-serif;
-  text-align: center;
-  padding: 20px;
   background: #f7f7f7;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  text-align: center;
+  max-width: 1200px;
+  width: 100%;
 }
 
 canvas {
   border: 1px solid #333;
   margin-top: 20px;
-  max-width: 100%;
+  width: 100%;                 /* Full width */
+  height: auto;
+  image-rendering: pixelated;   /* Keeps pixels crisp */
+}
+
+input[type="range"] {
+  width: 80%;
+  margin-top: 10px;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.slider-container {
+  margin-top: 20px;
 }
