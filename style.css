@@ -17,12 +17,13 @@ canvas {
   border: 1px solid #333;
   margin-top: 20px;
 
-  /* Make it much bigger */
-  width: 95vw;        /* 95% of the viewport width */
-  max-width: 1600px;  /* Optional max width */
-  height: auto;
+  /* Big but fits on most screens without scrolling */
+  width: 90vw;        /* 90% of viewport width */
+  max-width: 1200px;  /* optional max width */
+  max-height: 80vh;   /* max height is 80% of viewport height */
+  height: auto;       /* maintain aspect ratio */
 
-  image-rendering: pixelated; /* keeps pixels sharp when enlarged */
+  image-rendering: pixelated; /* keeps pixels crisp when enlarged */
 }
 
 
