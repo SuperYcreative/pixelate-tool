@@ -8,16 +8,27 @@
 </head>
 <body>
   <div class="container">
-    <h1>Pixelate Your Image</h1>
+    <div id="instructions">
+      <p>Drag & drop an image here, or click the box below to upload.</p>
+      <p>Use the slider to adjust pixel size. You can fit, reset, or download your pixelated image!</p>
+    </div>
 
-    <input type="file" id="upload" accept="image/*">
-    
+    <div id="drop-area">
+      <p>Drag & drop an image here, or click to upload</p>
+      <input type="file" id="upload" accept="image/*">
+    </div>
+
     <div class="slider-container">
       <label>Pixel Size: <span id="pixelSizeValue">10</span></label>
       <input type="range" id="pixelSize" min="1" max="50" value="10">
     </div>
 
     <canvas id="canvas"></canvas>
+
+    <div class="button-container">
+      <button id="fit">Fit to Screen</button>
+      <button id="reset">Reset</button>
+    </div>
 
     <button id="download">Download Pixelated Image</button>
   </div>
