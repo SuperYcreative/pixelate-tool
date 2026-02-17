@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pixelate Tool</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Pixelate Your Image</h1>
+  
+  <input type="file" id="upload" accept="image/*">
+  <br><br>
+  <label>Pixel Size: <span id="pixelSizeValue">10</span></label>
+  <input type="range" id="pixelSize" min="1" max="50" value="10">
+  <br><br>
+  <canvas id="canvas"></canvas>
+  <br><br>
+  <button id="download">Download Pixelated Image</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
