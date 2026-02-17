@@ -19,9 +19,13 @@ upload.addEventListener('change', (e) => {
 });
 
 img.onload = function() {
-  canvas.width = img.width;
-  canvas.height = img.height;
-  drawPixelated();
+  const maxWidth = 1000; // Maximum canvas width for big images
+  const scale = img.width > maxWidth ? maxWidth / img.width : 1;
+
+  canvas.width = img.width * scale;
+  canvas.height = img.height * scale;
+
+  drawPixelated(scale);
 }
 
 pixelSizeSlider.addEventListener('input', () => {
@@ -29,14 +33,14 @@ pixelSizeSlider.addEventListener('input', () => {
   if (img.src) drawPixelated();
 });
 
-function drawPixelated() {
+function drawPixelated(scale = 1) {
   const pixelSize = parseInt(pixelSizeSlider.value);
 
   const tempCanvas = document.createElement('canvas');
   const tCtx = tempCanvas.getContext('2d');
 
-  tempCanvas.width = Math.ceil(img.width / pixelSize);
-  tempCanvas.height = Math.ceil(img.height / pixelSize);
+  tempCanvas.width = Math.ceil((img.width * scale) / pixelSize);
+  tempCanvas.height = Math.ceil((img.height * scale) / pixelSize);
 
   tCtx.drawImage(img, 0, 0, tempCanvas.width, tempCanvas.height);
 
