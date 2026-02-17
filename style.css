@@ -16,10 +16,15 @@ body {
 canvas {
   border: 1px solid #333;
   margin-top: 20px;
-  width: 100%;                 /* Full width */
+
+  /* Make it much bigger */
+  width: 95vw;        /* 95% of the viewport width */
+  max-width: 1600px;  /* Optional max width */
   height: auto;
-  image-rendering: pixelated;   /* Keeps pixels crisp */
+
+  image-rendering: pixelated; /* keeps pixels sharp when enlarged */
 }
+
 
 input[type="range"] {
   width: 80%;
